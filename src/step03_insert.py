@@ -13,7 +13,7 @@ cur = conn.cursor()
 cur.execute(
     "INSERT INTO workouts (workout_date, workout_type, workout_duration) VALUES (?, ?, ?)",
 
-    ("2025-08-25", "Cardio", 80)
+    ("2025-08-20", "Beine", 80)
 )
 
 conn.commit()
