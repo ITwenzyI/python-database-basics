@@ -13,6 +13,11 @@ rows = cur.fetchall()
 for row in rows:
     print(row)
 
+cur.execute("select * from workouts order by workout_type ASC, workout_date DESC")
+rows = cur.fetchall()
+for row in rows:
+    print(row)
+
 cur.execute("select * from workouts order by workout_duration DESC LIMIT 1")
 rows = cur.fetchall()
 for row in rows:
@@ -22,11 +27,6 @@ cur.execute("select * from workouts order by workout_duration DESC LIMIT 1 OFFSE
 rows = cur.fetchall()
 for row in rows:
     print(f"Limit with Offset {row}")
-
-cur.execute("select * from workouts order by workout_type ASC, workout_date DESC")
-rows = cur.fetchall()
-for row in rows:
-    print(row)
 
 cur.execute("SELECT DISTINCT workout_type FROM workouts")
 rows = cur.fetchall()
