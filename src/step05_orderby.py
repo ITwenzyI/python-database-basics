@@ -27,3 +27,17 @@ cur.execute("select * from workouts order by workout_type ASC, workout_date DESC
 rows = cur.fetchall()
 for row in rows:
     print(row)
+
+cur.execute("SELECT DISTINCT workout_type FROM workouts")
+rows = cur.fetchall()
+
+print("Alle unterschiedlichen Workout-Typen:")
+for row in rows:
+    print(row[0])
+
+cur.execute("SELECT DISTINCT workout_type, workout_duration FROM workouts")
+rows = cur.fetchall()
+
+print("Alle unterschiedlichen Workout-Typen mit Duration (Wo beides einzigartig ist):")
+for row in rows:
+    print(row[0])
